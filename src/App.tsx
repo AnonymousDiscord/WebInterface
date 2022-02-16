@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import './App.scss';
 
-function App() {
+import Interface from './pages/interface/Interface';
+import { TranslationProvider, useTranslator } from './hooks/Translate';
+import { loadTheme } from './utils/Theme';
+import { LocationProvider, useLocation } from './hooks/Browse';
+
+//* setup fake backend
+import { configureFakeBackend } from './Debug';
+configureFakeBackend();
+/**/
+
+export default function App() {
+  useEffect(loadTheme, [])
+  const translator = useTranslator()
+  const location = useLocation()
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <TranslationProvider value={translator}>
+      <LocationProvider value={location}>
+        <Interface />
+      </LocationProvider>
+    </TranslationProvider>
   );
 }
-
-export default App;

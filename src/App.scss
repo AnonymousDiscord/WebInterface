@@ -1,0 +1,33 @@
+@import "./utils/Mixins.scss";
+
+body {
+  @include grayBackground(18%);
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  place-self: stretch;
+}
+
+.link {
+  color: white;
+  font-size: 40px;
+}
+
+.button {
+  @include shadow;
+  background-color: #7289DA;
+  align-content: center;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 20px;
+  border-width: 0;
+}
+
+.no-underline {
+  text-decoration: inherit;
+}

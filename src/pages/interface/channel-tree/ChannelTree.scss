@@ -1,0 +1,38 @@
+@import "../../../utils/Mixins.scss";
+
+.channel-list {
+  @include grayBackground(16%);
+  overflow-y: scroll;
+  width: 320px;
+  height: 100vh;
+}
+
+.channel {
+  cursor: pointer;
+  height: 28px;
+  border-radius: 5px;
+  color: white;
+  font-size: 24px;
+
+  display: grid;
+  grid-template-columns: min-content 4px auto;
+  align-content: center;
+  align-items: center;
+
+  svg {
+    margin-left: 10px;
+  }
+
+  &:hover {
+    @include grayBackground(22%);
+  }
+
+  &-selected {
+    @include grayBackground(28%);
+  }
+}
+
+.category {
+  margin-top: 16px;
+  font-size: 18px;
+}

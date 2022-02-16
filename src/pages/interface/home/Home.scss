@@ -1,0 +1,21 @@
+@import "../../../utils/Mixins.scss";
+
+.home {
+  grid-column: 3;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  place-content: center;
+  
+  > div {
+    @include shadow;
+    @include grayBackground(10%);
+    margin: 10px;
+    border-radius: 20px;
+    padding: 20px;
+  }
+}
+
+.hightlight {
+  color: #61dafb;
+}

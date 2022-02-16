@@ -1,0 +1,29 @@
+@import "../../../utils/Mixins.scss";
+
+.tabs {
+  display: flex;
+ }
+ 
+ .tab {
+   @include shadow;
+   @include grayBackground(40%);
+   cursor: pointer;
+ 
+   margin: 3px;
+   border-radius: 10px;
+   padding-left: 3px;
+   padding-right: 3px;
+   transition: .2s;
+   
+  &-plus {
+    width: 2.475ch;
+    padding: 0;
+    display: flex;
+    place-content: center;
+  }
+
+   &:hover, &-selected {
+     @include grayBackground(60%);
+     transition: .2s;
+   }
+ }

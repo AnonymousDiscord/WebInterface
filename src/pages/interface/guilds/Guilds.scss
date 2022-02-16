@@ -1,0 +1,111 @@
+@import "../../../utils/Mixins.scss";
+
+// icons
+
+.icon {
+  background-color: #fff2;
+  display: grid;
+  place-content: center;
+}
+
+// guilds
+
+.guild-list {
+  @include grayBackground(14%);
+  height: calc(100vh - 10px);
+  padding-top: 10px;
+  width: min-content;
+}
+
+.guild {
+  cursor: pointer;
+  position: relative;
+  margin: 0 0 8px;
+  display: flex;
+  justify-content: center;
+  width: 72px;
+  padding-right: 8px;
+
+  img, .icon {
+    @include img-shadow;
+    margin: 0;
+    border-radius: 100%;
+    grid-column: 2;
+    transition: .5s;
+  }
+  
+  span {
+    left: -8px;
+    height: 0;
+    transition: .3s;
+  }
+
+  &:hover, &-selected {
+
+    img, .icon {
+      border-radius: 20px;
+      transition: .2s;
+    }
+
+    span {
+      left: 0;
+      height: 20px;
+      transition: .3s;
+    }
+  }
+
+  &-selected {
+    span {
+      height: 40px;
+    }
+    
+    &:hover span {
+      height: 30px;
+    }
+  }
+}
+
+.tooltip {
+  @include shadow;
+  @include grayBackground(28%);
+  position: absolute;
+  align-self: center;
+  left: 90px;
+  white-space: nowrap;
+  color: white;
+  border-radius: 10px;
+  padding: 0px 5px
+}
+
+.seperator {
+  height: 2px;
+  width: 50%;
+  left: 25%;
+  position: relative;
+  margin-bottom: 8px;
+  border-radius: 1px;
+  background-color: #fff1;
+}
+
+.pill-box {
+  left: 0;
+  top: 8px;
+
+  position: relative;
+  overflow: hidden;
+  width: 8px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  contain: layout size;
+}
+
+.pill-item {
+  position: absolute;
+  display: block;
+  width: 8px;
+  border-radius: 0 4px 4px 0;
+  margin-left: -4px;
+  background-color: white;
+}

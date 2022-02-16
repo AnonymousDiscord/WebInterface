@@ -1,0 +1,16 @@
+@mixin shadow {
+  box-shadow: 0 4px 8px 0 #0000004d, 0 6px 20px 0 #00000030;
+}
+
+@mixin img-shadow {
+  filter: drop-shadow(0 4px 8px #00000070);
+}
+
+html {
+  --hue: 220;
+  --sat: 20%;
+}
+
+@mixin grayBackground($light) {
+  background-color: hsl(var(--hue), var(--sat), $light);
+}

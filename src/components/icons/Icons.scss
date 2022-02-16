@@ -1,0 +1,23 @@
+@import "../../utils/Mixins.scss";
+
+.logo-container {
+  @include shadow;
+
+  width: 150px;
+  height: 150px;
+  display: grid;
+  overflow: hidden;
+  place-items: center;
+  background: #fff3;
+  border-radius: 30px;
+}
+
+.logo-item {
+  @include img-shadow;
+  height: 135px;
+  overflow: visible;
+  stroke: #fff;
+  stroke-width: .75;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}

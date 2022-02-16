@@ -1,0 +1,6 @@
+@import "../../utils/Mixins.scss";
+
+.interface-grid {
+  display: grid;
+  grid-template-columns: min-content min-content auto;
+}

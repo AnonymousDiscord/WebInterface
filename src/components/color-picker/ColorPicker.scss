@@ -1,0 +1,41 @@
+@import "../../utils/Mixins.scss";
+
+.wrap {
+  position: relative;
+  width: 360px;
+  height: 30px;
+}
+
+.range {
+  width: 100%;
+  cursor: pointer;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.track {
+  width: 100%;
+  height: 10px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  background: linear-gradient(to right, rgba(255, 0, 0) 0%, rgb(255, 255, 0) 17%, rgb(0, 255, 0) 33%, rgb(0, 255, 255) 50%, rgb(0, 0, 255) 67%, rgb(255, 0, 255) 83%, rgb(255, 0, 0) 100%);
+}
+
+.sat {
+  background: linear-gradient(to right, hsl(var(--hue), 0%, 50%) 0%, hsl(var(--hue), 100%, 50%) 100%);
+}
+
+.thumb {
+  @include grayBackground(50%);
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0%, -50%);
+  pointer-events: none;
+}

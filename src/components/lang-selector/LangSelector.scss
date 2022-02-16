@@ -1,0 +1,15 @@
+@import "../../utils/Mixins.scss";
+
+.flag {
+  @include img-shadow;
+  border-radius: 10px;
+  margin: 10px;
+  cursor: pointer;
+  opacity: .3;
+  transition: .2s;
+
+  &:hover, &-selected {
+    opacity: 1;
+    transition: .2s;
+  }
+}
