@@ -16,7 +16,7 @@ export default function Interface() {
   return (
       <div className="interface-grid">
         <Guilds />
-        {guild && guild !== null ?
+        {guild ?
           <>
             <div className="channel-list">
               {guild.guild.name}
@@ -27,7 +27,7 @@ export default function Interface() {
             </div>
           </>
           :
-          guildId === "" ? <Home /> : <Guild404 guildId={guildId!} />
+          guildId === "" ? <Home /> : <Guild404 guildId={guildId} />
         }
       </div>
   );

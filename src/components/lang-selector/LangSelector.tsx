@@ -15,7 +15,7 @@ export default function LangSelector() {
 }
 
 function Flag({ lang, translator }: { lang: Lang, translator: Translator }) {
-  var code = Lang[lang].toLocaleLowerCase()
+  let code = Lang[lang].toLocaleLowerCase()
   if (code === "en") code = "us"
   return (
     <img

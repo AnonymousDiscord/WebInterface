@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 
 import '../../../App.scss';
 import './Features.scss';
@@ -8,7 +8,6 @@ import ServerStatsView from './feature/ServerStatsView';
 import AutoVoiceView from './feature/AutoVoice';
 import { ChannelType } from '../../../structure/ChannelType';
 import { LocationContext, UsedFeatures } from '../../../hooks/Browse';
-import { useState } from 'react';
 import { FeatureType } from '../../../utils/Cookies';
 import { MSG, TranslationContext } from '../../../hooks/Translate';
 import PopUp from '../../../components/popup/PopUp';

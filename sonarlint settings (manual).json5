@@ -1,0 +1,7 @@
+{
+  "sonarlint.rules": {
+    "typescript:S3358": { // nested ternary opertation
+      "level": "off"
+    }
+  }
+}

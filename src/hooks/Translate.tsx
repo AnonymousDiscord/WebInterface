@@ -28,8 +28,8 @@ export interface Translator {
 }
 
 export const TranslationContext = createContext<Translator>({
-  t: (msg: MSG, vars?: {}) => "",
-  setLang: (lang: Lang) => {},
+  t: () => "",
+  setLang: () => { /* overridden by app */ },
   translations: {}
 })
 
@@ -38,12 +38,12 @@ export const TranslationProvider = TranslationContext.Provider;
 export function useTranslator(): Translator {
   const [lang, setLang] = useState(getLang());
   const [translations, setTranslations] = useState({})
-  useEffect(() => {setCookie(lang);getTranslation(lang).then(setTranslations)}, [lang])
+  useEffect(() => { setCookie(lang); getTranslation(lang).then(setTranslations) }, [lang])
 
   function t(msg: MSG, vars?: {}) {
     if (!translations) return ""
-    var trans = (Object.entries<string>(translations).find(arr => arr[0] === MSG[msg])||["",MSG[msg]])[1];
-    if (vars) Object.entries<string>(vars).forEach(arr => trans = trans.replace('{'+arr[0]+'}', arr[1]))
+    let trans = (Object.entries<string>(translations).find(arr => arr[0] === MSG[msg]) || ["", MSG[msg]])[1];
+    if (vars) Object.entries<string>(vars).forEach(arr => trans = trans.replace('{' + arr[0] + '}', arr[1]))
     return trans
   }
 

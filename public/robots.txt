@@ -1,5 +1,5 @@
 User-agent: *
 Disallow: /phpmyadmin/
-Disallow: /cdn-cgi/
+Disallow: /cdn-cgi/apps/
 Disallow: /api/
 Disallow: /login/

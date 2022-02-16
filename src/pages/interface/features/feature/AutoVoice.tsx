@@ -7,12 +7,7 @@ import { LocationContext } from "../../../../hooks/Browse";
 
 export default function AutoVoiceView({ channel, guild }: { channel: ChannelInfo, guild: ServerInfo }) {
   const { channelFeatures } = useContext(LocationContext)
-  var voice = channelFeatures?.autoVoice
-  console.log(guild)
-  console.log(channelFeatures)
-  console.log(voice)
-  console.log(channel.id)
-  const [newVoice, setNewVoice] = useState<AutoVoice | undefined>(voice ? { ...voice } : undefined)
+  const [newVoice, setNewVoice] = useState<AutoVoice | undefined>(channelFeatures?.autoVoice ? { ...channelFeatures?.autoVoice } : undefined)
   const [buttonText, setButtonText] = useState("Save changes")
 
   return (

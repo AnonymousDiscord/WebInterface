@@ -41,13 +41,13 @@ export function delAutoVoice(guild: ServerInfo, channel: ChannelInfo) {
 
 // HELPER
 
-function error(error: any) {
-  console.error(error)
+function error(errorMsg: any) {
+  console.error(errorMsg)
   return undefined
 }
 
-async function get(url: string) {
-  return await fetch(url, { method: 'GET', headers: { Accept: 'application/json' } })
+function get(url: string) {
+  return fetch(url, { method: 'GET', headers: { Accept: 'application/json' } })
     .then(response => response.status===200?response.json():error(response), error);
 }
 

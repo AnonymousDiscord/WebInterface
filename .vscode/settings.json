@@ -1,6 +1,6 @@
 {
-  "editor.tabSize": 2,
   "editor.detectIndentation": false,
+  "editor.tabSize": 2,
+  "eslint.lintTask.enable": true,
   "files.eol": "\n",
-  "sonarlint.ls.javaHome": "C:\\Program Files\\Eclipse Foundation\\jdk-17.0.0.35-hotspot"
 }

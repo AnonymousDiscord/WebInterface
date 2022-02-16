@@ -18,7 +18,6 @@ export default function EasyForm({ title, feature, children }: { title: string, 
   )
 }
 
-
 function onChange(setError: (error: string | undefined) => void, update: (text: string) => void, checkError?: (text: string) => string | undefined, formateText?: (text: string) => string): React.ChangeEventHandler<HTMLInputElement> {
   return (event: React.ChangeEvent<HTMLInputElement>) => {
     if (formateText !== undefined) event.currentTarget.value = formateText(event.currentTarget.value!==undefined?event.currentTarget.value:event.currentTarget.defaultValue)
@@ -38,11 +37,12 @@ export function TextElement({ name, defauld, update, checkError, formateText }: 
   )
 }
 
+// TODO type = number
 export function NumberElement({ name, defauld, update, minVal, maxVal }: { name: string, defauld: number, update: (number: number) => void, minVal: number, maxVal: number }) {
   return (<TextElement name={name} defauld={String(defauld)} update={text => update(Number(text))} formateText={text => {
-    text = text.replaceAll(/[^0-9]/g, "");
+    text = text.replaceAll(/\D/g, "");
     if (text.length === 0) text = "0"
-    var num = Number(text)
+    let num = Number(text)
     if (num < minVal) num = minVal
     if (num > maxVal) num = maxVal
     return String(num)
@@ -52,7 +52,6 @@ export function NumberElement({ name, defauld, update, minVal, maxVal }: { name:
 export function SelectElement<Type extends string>({ name, defauld, show, options, types, updateSelected }: { name: string, defauld?: Type, show?: boolean, options?: { id: Type, name?: string }[], types?: Type[], updateSelected: (selected: Type) => void }) {
   if (defauld === undefined) {
     defauld = options ? options[0].id : types ? types[0] : undefined
-    //if (defauld !== undefined) updateSelected(defauld)
   }
   return (
     <label hidden={show !== undefined && !show}>

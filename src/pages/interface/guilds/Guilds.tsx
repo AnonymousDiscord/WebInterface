@@ -17,7 +17,7 @@ function Guild({ info, guild }: { info?: ServerInfo, guild: { id: string, icon?:
 
 function External({ guild, url }: { guild: { id: string, icon?: string, path?: string, name: string }, url: string }) {
   return (
-    <div onClick={(e) => { window.open(url, '_blank')?.focus() }}>
+    <div onClick={() => { window.open(url, '_blank')?.focus() }}>
       <Raw guild={guild} />
     </div>
   );

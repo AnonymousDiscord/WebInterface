@@ -70,7 +70,7 @@ function getCookie(name: string) {
 
 // utils
 
-var allowCookies = allow()
+let allowCookies = allow()
 
 function allow() {
   return document.cookie.includes("coockiless=1")

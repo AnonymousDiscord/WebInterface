@@ -1,5 +1,5 @@
-import { createContext, useState } from "react";
-import { useEffect } from "react";
+/* eslint-disable @typescript-eslint/no-empty-function */
+import { createContext, useState, useEffect } from "react";
 import ServerInfo, { AutoVoice, ChannelInfo, GuildInfo, ServerStat } from "../structure/ServerInfo";
 import { getGuilds, getServerInfo } from "../utils/Request";
 
@@ -7,7 +7,7 @@ export interface Location {
   guilds?: GuildInfo[]
   guild?: ServerInfo
   channel?: ChannelInfo
-  guildId?: string
+  guildId: string
   channelId?: string
   channelFeatures?: UsedFeatures
 }
@@ -25,25 +25,26 @@ export interface LocationStore extends Location {
 }
 
 export const LocationContext = createContext<LocationStore>({
-  setGuild: () => { },
-  setGuildId: () => { },
-  setChannel: () => { },
-  setChannelId: () => { },
+  guildId: "l",
+  setGuild: () => { /* overridden by app */ },
+  setGuildId: () => { /* overridden by app */ },
+  setChannel: () => { /* overridden by app */ },
+  setChannelId: () => { /* overridden by app */ },
 })
 
 export const LocationProvider = LocationContext.Provider;
 
-function featuresOf(guild: ServerInfo|undefined, channelId: string|undefined): UsedFeatures | undefined {
-  if (channelId&&guild) return {
-    serverStats: guild.features.serverStats?.find(c=>c.channelId===channelId),
-    autoVoice: guild.features.autoVoice?.find(c=>c.channelId===channelId)
+function featuresOf(guild: ServerInfo | undefined, channelId: string | undefined): UsedFeatures | undefined {
+  if (channelId && guild) return {
+    serverStats: guild.features.serverStats?.find(c => c.channelId === channelId),
+    autoVoice: guild.features.autoVoice?.find(c => c.channelId === channelId)
   }
 }
 
 export function useLocation(): LocationStore {
 
   const [store, setStore] = useState<Location | undefined>(() => {
-    var path = window.location.pathname
+    let path = window.location.pathname
     if (path.startsWith("/")) path = path.substring(1)
     if (path.endsWith("/")) path = path.substring(0, path.length - 1)
     const arr = path === "" ? [] : path.split("/")
@@ -98,25 +99,25 @@ export function useLocation(): LocationStore {
 
   function setChannel(channel: ChannelInfo) {
     setStore({
-      ...store,
+      ...store!, // eslint-disable-line
       channel: channel,
       channelId: channel.id,
-      channelFeatures: featuresOf(store!.guild!, channel.id)
-    });
+      channelFeatures: featuresOf(store?.guild, channel.id)
+    })
   }
 
   function setChannelId(channelId: string) {
-    const channel = store!.guild?.channels.find(c => c.id === channelId)
+    const channel = store?.guild?.channels.find(c => c.id === channelId)
     setStore({
-      ...store,
+      ...store!, // eslint-disable-line
       channel: channel,
       channelId: channelId,
-      channelFeatures: featuresOf(store!.guild!, channelId)
-    });
+      channelFeatures: featuresOf(store?.guild, channelId)
+    })
   }
 
   return {
-    ...store,
+    ...store!, // eslint-disable-line
     setGuildId: setGuildId,
     setChannelId: setChannelId,
     setChannel: setChannel,
