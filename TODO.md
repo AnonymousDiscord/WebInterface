@@ -18,3 +18,7 @@
 - add permission message when action failed
 - add error log for errors (auto report via ticket)
 - rewrite ticket support
+
+## Git
+
+- Automatically update productive system when build on master was succsessful
