@@ -2,7 +2,8 @@
 
 ## Build Status
 
-![Build](https://github.com/PhoenixmitX/WebInterface/actions/workflows/node.js.yml/badge.svg)
+![Master status](https://github.com/PhoenixmitX/WebInterface/actions/workflows/master.yml/badge.svg)
+![Develop status](https://github.com/PhoenixmitX/WebInterface/actions/workflows/develop.yml/badge.svg)
 
 # Getting Started with Create React App
 
