@@ -41,6 +41,7 @@ export function delAutoVoice(guild: ServerInfo, channel: ChannelInfo) {
 
 // HELPER
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function error(errorMsg: any) {
   console.error(errorMsg)
   return undefined
