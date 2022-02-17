@@ -1,5 +1,6 @@
 name: Update Dependencies
 on:
+  workflow_dispatch:
   schedule:
     - cron:  '0 0 * * *'
 jobs:
@@ -9,7 +10,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
-          node-version: '12.x'
+          node-version: '17.x'
       - name: Update dependencies
         run: |
           npx -p npm-check-updates ncu -u
