@@ -1,3 +1,9 @@
+# WebInterface
+
+## Build Status
+
+![Build](https://github.com/PhoenixmitX/WebInterface/actions/workflows/node.js.yml/badge.svg)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
