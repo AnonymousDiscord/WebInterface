@@ -1,19 +1,18 @@
 import React, { useContext, useState } from "react";
 import { ChannelType } from "../../../../structure/ChannelType";
 import ServerInfo, { ChannelInfo, placeholderValues, ServerStat } from "../../../../structure/ServerInfo";
-import { FeatureType } from "../../../../utils/Cookies";
 import EasyForm, { SelectButton, SelectElement, TextElement } from "../../../../components/forms/Forms";
 import { delStats, updateServerStat } from "../../../../utils/Request";
 import { LocationContext } from "../../../../hooks/Browse";
 
-export default function ServerStats({ channel, guild }: { channel: ChannelInfo, guild: ServerInfo }) {
+export default function ServerStatsView({ channel, guild }: { channel: ChannelInfo, guild: ServerInfo }) {
   const { channelFeatures } = useContext(LocationContext)
   const stats = channelFeatures?.serverStats
   const [newStats, setNewStats] = useState<ServerStat | undefined>(stats ? { ...stats } : undefined)
   const [buttonText, setButtonText] = useState("Save changes")
 
   return (
-    <EasyForm title="ServerStats" feature={FeatureType.ServerStats}>
+    <EasyForm title="ServerStats">
       {newStats === undefined ? (
         <SelectButton name={"Create new"} onClick={() => setNewStats({ channelId: channel.id, name: channel.name, placeholder: "MEMBERS" })} />
       ) : (

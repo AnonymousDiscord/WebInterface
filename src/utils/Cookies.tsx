@@ -1,11 +1,6 @@
 import { Lang } from "../hooks/Translate";
 import { Range } from "./Range";
 
-export enum FeatureType {
-  ServerStats = 1,
-  AutoVoice = 2,
-}
-
 // theme
 
 export function setHueCookie(hue: Range<361>) {
@@ -26,16 +21,6 @@ export function getSat() {
   const cookie = getCookie("sat")
   if (cookie === undefined) return 20
   return Number(cookie) as Range<101>
-}
-
-// expand
-
-export function isExpanded(feature: FeatureType) {
-  return (Number(getCookie("fv") || "0") & feature) !== 0
-}
-
-export function expand(feature: FeatureType, is: boolean) {
-  setCookie("fv", String(is ? Number(getCookie("fv") || "0") | feature : Number(getCookie("fv") || "0") & ~feature))
 }
 
 // lang

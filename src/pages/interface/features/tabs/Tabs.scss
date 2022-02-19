@@ -6,7 +6,7 @@
 
 .tab {
   @include shadow;
-  @include grayBackground(40%);
+  @include grayBackground(35%);
   cursor: pointer;
 
   margin: 3px;
@@ -24,7 +24,7 @@
 
   &:hover,
   &-selected {
-    @include grayBackground(60%);
+    @include grayBackground(50%);
     transition: 0.2s;
   }
 }

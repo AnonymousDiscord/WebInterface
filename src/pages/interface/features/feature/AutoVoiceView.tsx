@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
 import ServerInfo, { AutoVoice, ChannelInfo } from "../../../../structure/ServerInfo";
-import { FeatureType } from "../../../../utils/Cookies";
 import EasyForm, { NumberElement, SelectButton } from "../../../../components/forms/Forms";
 import { delAutoVoice, updateAutoVoice } from "../../../../utils/Request";
 import { LocationContext } from "../../../../hooks/Browse";
@@ -11,7 +10,7 @@ export default function AutoVoiceView({ channel, guild }: { channel: ChannelInfo
   const [buttonText, setButtonText] = useState("Save changes")
 
   return (
-    <EasyForm title="AutoVoice" feature={FeatureType.AutoVoice}>
+    <EasyForm title="AutoVoice">
       {newVoice === undefined ? (
         <SelectButton name={"Create new"} onClick={() => setNewVoice({ channelId: channel.id, emptyChannels: 1 })} />
       ) : (

@@ -1,17 +1,13 @@
 import React, { ReactChild, useState } from 'react';
-import { expand, FeatureType, isExpanded } from '../../utils/Cookies';
 import './Forms.scss';
 
-// easier modification for every form later
-export default function EasyForm({ title, feature, children }: { title: string, feature: FeatureType, children: ReactChild[] | ReactChild }) {
-  const [active, setActive] = useState(isExpanded(feature))
+export default function EasyForm({ title, children }: { title: string, children: ReactChild[] | ReactChild }) {
   return (
     <div className="form">
-      <div style={{ padding: 20, cursor: "pointer" }} onClick={() => { expand(feature, !active); setActive(!active) }}>
+      <div style={{ padding: 20 }}>
         {title}
-        <div style={{ float: "right" }}>{active ? "-" : "+"}</div>
       </div>
-      <div style={{ padding: 20, paddingTop: 0 }} hidden={!active}>
+      <div style={{ padding: 20, paddingTop: 0 }}>
         <form>{children}</form>
       </div>
     </div>
