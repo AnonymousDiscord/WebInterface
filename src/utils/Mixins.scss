@@ -1,16 +1,32 @@
-@mixin shadow {
-  box-shadow: 0 4px 8px 0 #0000004d, 0 6px 20px 0 #00000030;
+// animations
+
+@keyframes opacity {
+  0% { opacity: 0; }
+  to { opacity: 1; }
 }
 
-@mixin img-shadow {
-  filter: drop-shadow(0 4px 8px #00000070);
+@keyframes scale {
+  0% { transform: scale(0); }
+  to { transform: scale(1); }
 }
+
+// global vars
 
 html {
   --hue: 220;
   --sat: 20%;
 }
 
+// mixins
+
 @mixin grayBackground($light) {
   background-color: hsl(var(--hue), var(--sat), $light);
+}
+
+@mixin shadow {
+  box-shadow: 0 4px 8px 0 #0000004d, 0 6px 20px 0 #00000030;
+}
+
+@mixin img-shadow {
+  filter: drop-shadow(0 4px 8px #00000070);
 }
