@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Update git
 git pull
 rm -rfd node_modules
