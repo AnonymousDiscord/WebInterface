@@ -42,6 +42,6 @@
     "eslint": "^8.10.0",
     "eslint-plugin-react": "^7.29.1",
     "miragejs": "^0.1.43",
-    "vite": "2.7.0"
+    "vite": "2.8.4"
   }
 }
