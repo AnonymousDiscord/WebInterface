@@ -38,9 +38,9 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.12.1",
     "@typescript-eslint/parser": "^5.12.1",
-    "@vitejs/plugin-react": "1.1.1",
+    "@vitejs/plugin-react": "1.2.0",
     "eslint": "^8.10.0",
-    "eslint-plugin-react": "^7.29.1",
+    "eslint-plugin-react": "^7.29.2",
     "miragejs": "^0.1.43",
     "vite": "2.8.4"
   }
