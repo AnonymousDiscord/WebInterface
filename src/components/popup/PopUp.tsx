@@ -9,7 +9,7 @@ export default function PopUp({ children, close }: { children: ReactChild[] | Re
   }
 
   return (
-    <div key={"" + doClose} className={"popup-background"+(doClose?" popup-background-close":"")} onClick={closefunc}>
+    <div onKeyDown={e => {if (e.key === "Escape") closefunc()}} onClick={closefunc} key={"" + doClose} className={"popup-background"+(doClose?" popup-background-close":"")}  >
       <div className={"popup"+(doClose?" popup-close":"")} >
         <div className="popup-x" onClick={closefunc}>x</div>
         {children}

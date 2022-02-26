@@ -15,6 +15,8 @@ export enum FeatureType {
   AutoVoice,
 }
 
+const Features = [FeatureType[1], FeatureType[2], FeatureType[3]];
+
 export function getFeatureView(type: FeatureType, { channel, guild }: { channel: ChannelInfo, guild: ServerInfo }) {
   switch (type) {
     case FeatureType.ServerStats: return <ServerStatsView channel={channel} guild={guild} />
@@ -46,11 +48,11 @@ function Plus() {
   const [openPopup, setOpenPopup] = useState(false)
   return (
     <>
-      {openPopup ?
-        <PopUp close={() => setOpenPopup(false)}>
-          
+      {openPopup &&
+        <PopUp close={() => setOpenPopup(false)} >
+          {Features.map(c => (<div key={c}>{c}</div>))}
         </PopUp>
-      : <></>}
+      }
       <div className='tab tab-plus' onClick={() => setOpenPopup(true)}>+</div>
     </>
   )
