@@ -16,7 +16,7 @@ npm run build
 
 # Update productive system
 rm -rfd /var/www/html/
-mv build /var/www/html/
+mv dist /var/www/html/
 
 # Reload productive system
 service apache2 reload
