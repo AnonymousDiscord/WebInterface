@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@types/react": "^17.0.39",
-    "@types/react-dom": "^17.0.11",
+    "@types/react-dom": "^17.0.12",
     "framer-motion": "^6.2.8",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -37,12 +37,12 @@
     ]
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.12.1",
-    "@typescript-eslint/parser": "^5.12.1",
+    "@typescript-eslint/eslint-plugin": "^5.13.0",
+    "@typescript-eslint/parser": "^5.13.0",
     "@vitejs/plugin-react": "1.2.0",
     "eslint": "^8.10.0",
     "eslint-plugin-react": "^7.29.2",
     "miragejs": "^0.1.43",
-    "vite": "2.8.4"
+    "vite": "2.8.6"
   }
 }
