@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import './Guilds.scss';
 import { LocationContext } from '../../../hooks/Browse';
 import ServerInfo from '../../../structure/ServerInfo';
-import { CrowdInPath, DefaultGuildIcon, Icon, GitHubPath } from './GuildIcons';
+import { CrowdInPath, DefaultGuildIcon, Icon, GitHubPath, PlusPath } from './GuildIcons';
 import { MSG, TranslationContext } from '../../../hooks/Translate';
 import { QuestionMarkPath } from '../../../components/icons/Icons';
 
@@ -51,7 +51,7 @@ export function Guilds() {
       <Guild info={guild} guild={{ id: "", name: t(MSG.HOME), path: QuestionMarkPath, viewBox:"0 -.9 17.27 32" }} />
       <div className='seperator' />
       {guilds?.map(json => <Guild info={guild} guild={json} key={json.id} />)}
-      <External url="https://ano.bot/invite" guild={{ id: "add", name: t(MSG.ADD_BOT), path: "M20 11.1111H12.8889V4H11.1111V11.1111H4V12.8889H11.1111V20H12.8889V12.8889H20V11.1111Z" }} />
+      <External url="https://ano.bot/invite" guild={{ id: "add", name: t(MSG.ADD_BOT), path: PlusPath }} />
       <div className='seperator' />
       <External url='https://ano.bot/discord' guild={{ id: "join", name: t(MSG.JOIN_SERVER) }} />
       <External url="https://ano.bot/github" guild={{ id: "github", name: "GitHub", path: GitHubPath, viewBox: "0 0 256 256" }} />

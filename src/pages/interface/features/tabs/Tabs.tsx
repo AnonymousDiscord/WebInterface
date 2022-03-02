@@ -8,6 +8,7 @@ import ServerStatsView from '../feature/ServerStatsView';
 import AutoVoiceView from '../feature/AutoVoiceView';
 import SettingsView from '../feature/SettingsView';
 import ServerInfo, { ChannelInfo } from '../../../../structure/ServerInfo';
+import { PlusPath } from '../../guilds/GuildIcons';
 
 export enum FeatureType {
   Settings = 1,
@@ -53,7 +54,11 @@ function Plus() {
           {Features.map(c => (<div key={c}>{c}</div>))}
         </PopUp>
       }
-      <div className='tab tab-plus' onClick={() => setOpenPopup(true)}>+</div>
+      <div className='tab tab-plus' onClick={() => setOpenPopup(true)}>
+        <svg viewBox='0 0 24 24'>
+          <path d={PlusPath} fill="white"/>
+        </svg>
+      </div>
     </>
   )
 }
