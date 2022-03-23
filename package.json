@@ -3,14 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@types/react": "^17.0.40",
-    "@types/react-dom": "^17.0.13",
+    "@types/react": "^17.0.41",
+    "@types/react-dom": "^17.0.14",
     "framer-motion": "^6.2.8",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "sass": "^1.49.9",
     "typescript": "^4.6.2",
-    "vite-plugin-svgr": "^1.0.1",
+    "vite-plugin-svgr": "^1.1.0",
     "vite-tsconfig-paths": "^3.4.1",
     "web-vitals": "^2.1.4"
   },
@@ -37,8 +37,8 @@
     ]
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.14.0",
-    "@typescript-eslint/parser": "^5.14.0",
+    "@typescript-eslint/eslint-plugin": "^5.16.0",
+    "@typescript-eslint/parser": "^5.16.0",
     "@vitejs/plugin-react": "1.2.0",
     "eslint": "^8.11.0",
     "eslint-plugin-react": "^7.29.4",
