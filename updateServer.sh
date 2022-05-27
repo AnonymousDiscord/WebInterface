@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Update git
-git pull
+git pull --rebase
 rm -rfd node_modules
 
 # Update files
